@@ -3,6 +3,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { merge } = require('webpack-merge')
 
 const paths = require('./paths')
+// eslint-disable-next-line import/extensions
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
@@ -10,7 +11,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.build,
-    publicPath: '/',
+    publicPath: 'auto',
     filename: 'js/[name].[contenthash].bundle.js',
   },
   module: {

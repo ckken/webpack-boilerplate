@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].bundle.js',
-    publicPath: '/',
+    publicPath: 'auto',
   },
 
   // Customize the webpack build process
@@ -46,6 +46,11 @@ module.exports = {
 
   // Determine how modules within the project are treated
   module: {
+    generator: {
+      'asset/resource': {
+        publicPath: '/',
+      },
+    },
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
       { test: /\.js$/, use: ['babel-loader'] },
